@@ -8,7 +8,7 @@ function App() {
   // checking if the user is signed in or not using useUser() func
   const {user, isLoaded, isSignedIn} = useUser();
 
-  if(!isSignedIn){
+  if(isLoaded && !isSignedIn){
     return <Navigate to={'/auth/sign-in'}/>
   }
   return (
