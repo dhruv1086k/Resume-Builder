@@ -13,7 +13,7 @@ export default function Header() {
         </div>
         <div className={styles.center}>
           <ul>
-            <a href="#">
+            <a href="/">
               <li>HOME</li>
             </a>
             <a href="#">
@@ -22,17 +22,17 @@ export default function Header() {
             <a href="#">
               <li>DEVELOPER</li>
             </a>
-            <a href="#">
-              <li>
-                {isSignedIn && (
+            {isSignedIn && (
+              <a href="#">
+                <li>
                   <Link to={"/dashboard"}>
                     <Button className={styles.button} id={styles.dashBtn}>
                       DASHBOARD
                     </Button>
                   </Link>
-                )}
-              </li>
-            </a>
+                </li>
+              </a>
+            )}
           </ul>
         </div>
         <div className={styles.right}>

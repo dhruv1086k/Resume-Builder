@@ -22,7 +22,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 3rem;
+    gap: 4rem;
+}
+.center a{
+    font-weight: 300;
+    letter-spacing: 1px;
 }
 .right{
     width: 20%;
