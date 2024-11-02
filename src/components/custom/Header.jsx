@@ -8,21 +8,44 @@ export default function Header() {
   return (
     <>
       <div className={styles.container}>
-        <img src="/logo.svg" alt="" />
-        {isSignedIn ? (
-          <div className={styles.headerRightCont}>
-            <Link to={"/dashboard"}>
-              <Button className={styles.button} id={styles.dashBtn}>
-                Dashboard
-              </Button>
+        <div className={styles.left}>
+          <img src="/logo.png" alt="" />
+        </div>
+        <div className={styles.center}>
+          <ul>
+            <a href="#">
+              <li>HOME</li>
+            </a>
+            <a href="#">
+              <li>DOCS</li>
+            </a>
+            <a href="#">
+              <li>DEVELOPER</li>
+            </a>
+            <a href="#">
+              <li>
+                {isSignedIn && (
+                  <Link to={"/dashboard"}>
+                    <Button className={styles.button} id={styles.dashBtn}>
+                      DASHBOARD
+                    </Button>
+                  </Link>
+                )}
+              </li>
+            </a>
+          </ul>
+        </div>
+        <div className={styles.right}>
+          {isSignedIn ? (
+            <div className={styles.headerRightCont}>
+              <UserButton />
+            </div>
+          ) : (
+            <Link to={"./auth/sign-in"} className={styles.buttonOuter}>
+              <Button className={styles.button}>Get Started</Button>
             </Link>
-            <UserButton className={styles.profileBtn} />
-          </div>
-        ) : (
-          <Link to={"./auth/sign-in"} className={styles.buttonOuter}>
-            <Button className={styles.button}>Get Started</Button>
-          </Link>
-        )}
+          )}
+        </div>
       </div>
     </>
   );

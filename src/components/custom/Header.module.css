@@ -6,6 +6,30 @@
     width: 100%;
     height: 10vh;
 }
+.left{
+    width: 20%;
+}
+.left img{
+    height: 100%;
+}
+.center{
+    width: 60%;
+    display: flex;
+    align-items: center;
+}
+.center ul{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+.right{
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
 .headerRightCont{
     display: flex;
     gap: 2rem;
@@ -17,16 +41,11 @@
 }
 .button{
     color: #fff;
-    background: #971C1C;
-    padding: .1rem 1rem;
+    background: #971c1ca1;
+    padding: .5rem 1rem;
     border-radius: .2rem;
     font-weight: 500;
 }
-.profileBtn{
-    width: 50px;
-    height: 50px;
-}
-
 #dashBtn{
     padding: .5rem 1rem;
 }
