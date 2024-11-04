@@ -23,13 +23,11 @@ export default function Header() {
               <li>DEVELOPER</li>
             </a>
             {isSignedIn && (
-              <a href="#">
+              <a href="/dashboard">
                 <li>
-                  <Link to={"/dashboard"}>
-                    <Button className={styles.button} id={styles.dashBtn}>
-                      DASHBOARD
-                    </Button>
-                  </Link>
+                  <Button className={styles.button} id={styles.dashBtn}>
+                    DASHBOARD
+                  </Button>
                 </li>
               </a>
             )}

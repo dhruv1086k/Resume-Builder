@@ -1,0 +1,84 @@
+.addResumeButtonOuter{
+    width: 200px;
+    height: 250px;
+    border: 1px solid #dfdfdf;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+    background: #ededed;
+    transition: all 0.2s;
+}
+.addResumeButtonOuter:hover{
+    transform: scale(1.03);
+    cursor: pointer;
+    box-shadow: 0 0 10px #00000032;
+}
+
+.dialogContainer{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #00000071;
+}
+
+.show {
+    display: block;
+  }
+  
+  .hide {
+    display: none;
+  }
+
+.dialog{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    height: auto;
+    transform: translate(-50%, -50%);
+    color: #000;
+    background: #fff;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+.btnContainer{
+    display: flex;
+    justify-content: end;
+    gap: 1rem;
+}
+.btnContainer Button{
+    color: #fff;
+    background: #971c1ca1;
+    padding: .5rem 1rem;
+    border-radius: .2rem;
+    font-weight: 500;
+}
+#CBtn{
+    color: #971c1ca1;
+    border: 2px solid #971c1ca1;
+    background: transparent;
+    transition: all 0.3s;
+}
+#CBtn:hover{
+    background: #971c1c28;
+}
+.dialogTitle{
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.dialogDescription p{
+    font-size: 1.1rem;
+}
+
+.dialogInput{
+    margin: 1rem 0;
+    width: 100%;
+    padding: .5rem;
+    outline: none;
+    border-radius: .5rem;
+}
