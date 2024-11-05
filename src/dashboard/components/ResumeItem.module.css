@@ -1,0 +1,16 @@
+.resumeListItem{
+    width: 200px;
+    height: 250px;
+    border: 1px solid #dfdfdf;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+    background: #ededed;
+    transition: all 0.2s;
+}
+.resumeListItem:hover{
+    transform: scale(1.03);
+    cursor: pointer;
+    box-shadow: 0 0 10px #00000032;
+}

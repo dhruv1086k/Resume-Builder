@@ -44,7 +44,6 @@ export default function AddResume() {
       setLoading(false);
     }
   };
-  
 
   return (
     <>
@@ -55,31 +54,33 @@ export default function AddResume() {
         >
           <PlusSquare />
         </div>
-        <Dialog open={openDialog} onOpenChange={setOpenDialog}>
-          <DialogContent className={styles.dialog}>
-            <DialogHeader>
-              <DialogTitle className={styles.dialogTitle}>
-                Create New Resume
-              </DialogTitle>
-              <DialogDescription className={styles.dialogDescription}>
-                <p>Add a title for your new resume</p>
-                <Input
-                  className={styles.dialogInput}
-                  placeholder="Ex. Full Stack Developer Resume"
-                  onChange={(e) => setResumeTitle(e.target.value)}
-                />
-              </DialogDescription>
-              <div className={styles.btnContainer}>
-                <Button id={styles.CBtn} onClick={() => setOpenDialog(false)}>
-                  Cancel
-                </Button>
-                <Button disabled={!resumeTitle || loading} onClick={onCreate}>
-                  {loading ? <Loader2 className={styles.spin} /> : "Create"}
-                </Button>
-              </div>
-            </DialogHeader>
-          </DialogContent>
-        </Dialog>
+        <div className={`${styles.dialogContainer} ${openDialog?styles.show:styles.hide}`}>
+          <Dialog open={openDialog} onOpenChange={setOpenDialog}>
+            <DialogContent className={styles.dialog}>
+              <DialogHeader>
+                <DialogTitle className={styles.dialogTitle}>
+                  Create New Resume
+                </DialogTitle>
+                <DialogDescription className={styles.dialogDescription}>
+                  <p>Add a title for your new resume</p>
+                  <Input
+                    className={styles.dialogInput}
+                    placeholder="Ex. Full Stack Developer Resume"
+                    onChange={(e) => setResumeTitle(e.target.value)}
+                  />
+                </DialogDescription>
+                <div className={styles.btnContainer}>
+                  <Button id={styles.CBtn} onClick={() => setOpenDialog(false)}>
+                    Cancel
+                  </Button>
+                  <Button disabled={!resumeTitle || loading} onClick={onCreate}>
+                    {loading ? <Loader2 className={styles.spin} /> : "Create"}
+                  </Button>
+                </div>
+              </DialogHeader>
+            </DialogContent>
+          </Dialog>
+        </div>
       </div>
     </>
   );

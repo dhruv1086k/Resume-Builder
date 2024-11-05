@@ -6,12 +6,14 @@ const axiosClient = axios.create({
     baseURL: 'http://localhost:1337/api/',
     headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${API_KEY}`
+        'Authorization': `Bearer ${API_KEY}`  //we are using this bearer api key so that no one other than us can access the data
     }
 })
 
-const CreateNewResume = (data) => axiosClient.post('/user-resumes',data)
+const CreateNewResume = (data) => axiosClient.post('/user-resumes',data);
+const GetUserResumes = (userEmail) => axiosClient.get('/user-resumes?filters[userEmail][$eq]='+userEmail);
 
 export default{
-    CreateNewResume
+    CreateNewResume,
+    GetUserResumes
 }
