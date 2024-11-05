@@ -1,13 +1,14 @@
-import styles from './ResumeItem.module.css'
+import { Link } from "react-router-dom";
+import styles from "./ResumeItem.module.css";
 
-export default function ResumeItem({resume}) {
+export default function ResumeItem({ resume }) {
   return (
     <>
-      <div>
-        <div className={styles.resumeListItem}>
-            {resume.title}
+      <Link to={'/dashboard/resume/'+resume.resumeId+'/edit'}>
+        <div>
+          <div className={styles.resumeListItem}>{resume.title}</div>
         </div>
-      </div>
+      </Link>
     </>
   );
 }

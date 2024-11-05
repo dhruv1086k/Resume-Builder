@@ -14,12 +14,14 @@ import { Input } from "@/components/ui/input";
 import { v4 as uuidv4 } from "uuid";
 import GlobalApi from "./../../../service/GlobalApi";
 import { useUser } from "@clerk/clerk-react";
+import { useNavigate } from "react-router-dom";
 
 export default function AddResume() {
   const [openDialog, setOpenDialog] = useState(false);
   const [resumeTitle, setResumeTitle] = useState("");
   const { user } = useUser();
   const [loading, setLoading] = useState(false);
+  const navigation = useNavigate();
 
   const onCreate = async () => {
     setLoading(true);
@@ -33,10 +35,13 @@ export default function AddResume() {
       },
     };
     try {
-      const res = await GlobalApi.CreateNewResume(data);
+      const res = await GlobalApi.CreateNewResume(data);      
       if (res) {
-        setLoading(false);
+        setLoading(false); 
         setOpenDialog(false);
+        if(res){
+          navigation('/dashboard/resume/'+ res.data.data.documentId +'/edit')
+        }
       }
     } catch (error) {
       console.error("Error response:", error.response);
