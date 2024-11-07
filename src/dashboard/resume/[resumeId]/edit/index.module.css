@@ -1,0 +1,12 @@
+.container{
+    width: 100%;
+    min-height: 90vh;
+    height: auto;
+    display: flex;
+    color: #000;
+    background-color: #fff;
+}
+.editor, .preview{
+    width: 50%;
+    height: auto;
+}

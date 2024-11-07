@@ -1,15 +1,27 @@
 import { useParams } from "react-router-dom";
 import styles from "./index.module.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import FormSection from "../../component/FormSection";
+import FormPreview from "../../component/FormPreview";
+import { ResumeInfoContext } from "@/context/ResumeInfoContext";
+import dummy from "@/data/dummy";
 
 export default function EditResume() {
   const params = useParams(); //will return url parameters
+  const [resumeInfo, setResumeInfo] = useState();
   useEffect(() => {
-    console.log(params.resumeId);
+    setResumeInfo(dummy) //adding dummy data to usestate
   }, []);
   return (
     <>
-      <div>Edit Resume</div>
+      <ResumeInfoContext.Provider value={{resumeInfo}}>
+        <div className={styles.container}>
+          {/* resume editor */}
+          <FormSection />
+          {/* resume preview */}
+          <FormPreview />
+        </div>
+      </ResumeInfoContext.Provider>
     </>
   );
 }
