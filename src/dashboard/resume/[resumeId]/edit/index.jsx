@@ -14,7 +14,7 @@ export default function EditResume() {
   }, []);
   return (
     <>
-      <ResumeInfoContext.Provider value={{resumeInfo}}>
+      <ResumeInfoContext.Provider value={{resumeInfo,setResumeInfo}}>
         <div className={styles.container}>
           {/* resume editor */}
           <FormSection />
