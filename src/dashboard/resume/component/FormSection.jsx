@@ -25,7 +25,7 @@ export default function FormSection() {
                 size="sm"
                 onClick={() => setActiveFormIndex(activeFormIndex - 1)}
               >
-                Previous <ArrowLeft />{" "}
+                <ArrowLeft />{" "}
               </Button>
             )}
             <Button
@@ -41,7 +41,7 @@ export default function FormSection() {
         {/* Personal Details */}
         {activeFormIndex == 1 && <PersonalDetails enableNext={(v) => setEnableNext(v)} />}
         {/* Summary */}
-        {activeFormIndex == 2 && <Summary />}
+        {activeFormIndex == 2 && <Summary enableNext={(v) => setEnableNext(v)} />}
         {/* Experience */}
         {activeFormIndex == 3 && <Experience />}
         {/* Educational Detail */}
