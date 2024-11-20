@@ -3,6 +3,7 @@ import "./App.css";
 import { Button } from "./components/ui/button";
 import { useUser } from "@clerk/clerk-react";
 import Header from "./components/custom/Header";
+import { Toaster } from "sonner";
 
 function App() {
   // checking if the user is signed in or not using useUser() func
@@ -13,8 +14,9 @@ function App() {
   }
   return (
     <>
-        <Header />
-        <Outlet />
+      <Header />
+      <Outlet />
+      <Toaster />
     </>
   );
 }
