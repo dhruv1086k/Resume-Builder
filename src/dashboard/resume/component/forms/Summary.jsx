@@ -4,7 +4,7 @@ import { ResumeInfoContext } from "@/context/ResumeInfoContext";
 import { useContext, useEffect, useState } from "react";
 import GlobalApi from "../../../../../service/GlobalApi";
 import { useParams } from "react-router-dom";
-import { Bot, Brain, LoaderCircle } from "lucide-react";
+import { Bot, LoaderCircle } from "lucide-react";
 import { AIChatSession } from "./../../../../../service/AIModal";
 
 const prompt =
